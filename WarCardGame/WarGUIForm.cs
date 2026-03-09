@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace WarCardGame
 {
-    public partial class Form1 : Form
+    public partial class WarGUIForm : Form
     {
-        public Form1()
+        public WarGUIForm()
         {
             InitializeComponent();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
