@@ -17,6 +17,12 @@ namespace WarCardGame
             InitializeComponent();
         }
 
+        private void CardInitialize() 
+        { 
+            Deck cardDeck = new Deck();
+            Card currentCard = cardDeck.Deal();
+        }
+
         private void ExitButton_Click(object sender, EventArgs e)
         {
             this.Close();
