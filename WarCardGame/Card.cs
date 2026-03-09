@@ -8,6 +8,9 @@ namespace WarCardGame
 {
     internal class Card
     {
+        string[,] CardPics = new string[12,5];
+        string PicturePath = "..\\..\\..\\CardPics";
+
         public int RankIndex
         {
             get;
@@ -29,16 +32,16 @@ namespace WarCardGame
             switch (this.SuitIndex)
             {
                 case 0:
-                    _suit = "Spades";
+                    _suit = "Clubs";
                     break;
                 case 1:
                     _suit = "Diamonds";
                     break;
                 case 2:
-                    _suit = "Clubs";
+                    _suit = "Hearts";
                     break;
                 case 3:
-                    _suit = "Hearts";
+                    _suit = "Spades";
                     break;
                 default:
                     _suit = "Joker";
@@ -69,6 +72,11 @@ namespace WarCardGame
             }
 
             return _rank;
+        }
+
+        public static implicit operator Card(T v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

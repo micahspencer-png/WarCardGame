@@ -1,0 +1,10 @@
+C:\Users\Micas\OneDrive\Documents\Git\3371\WarCardGame\WarCardGame\bin\Debug\WarCardGame.exe.config
+C:\Users\Micas\OneDrive\Documents\Git\3371\WarCardGame\WarCardGame\bin\Debug\WarCardGame.exe
+C:\Users\Micas\OneDrive\Documents\Git\3371\WarCardGame\WarCardGame\bin\Debug\WarCardGame.pdb
+C:\Users\Micas\OneDrive\Documents\Git\3371\WarCardGame\WarCardGame\obj\Debug\WarCardGame.csproj.AssemblyReference.cache
+C:\Users\Micas\OneDrive\Documents\Git\3371\WarCardGame\WarCardGame\obj\Debug\WarCardGame.Properties.Resources.resources
+C:\Users\Micas\OneDrive\Documents\Git\3371\WarCardGame\WarCardGame\obj\Debug\WarCardGame.WarGUIForm.resources
+C:\Users\Micas\OneDrive\Documents\Git\3371\WarCardGame\WarCardGame\obj\Debug\WarCardGame.csproj.GenerateResource.cache
+C:\Users\Micas\OneDrive\Documents\Git\3371\WarCardGame\WarCardGame\obj\Debug\WarCardGame.csproj.CoreCompileInputs.cache
+C:\Users\Micas\OneDrive\Documents\Git\3371\WarCardGame\WarCardGame\obj\Debug\WarCardGame.exe
+C:\Users\Micas\OneDrive\Documents\Git\3371\WarCardGame\WarCardGame\obj\Debug\WarCardGame.pdb
