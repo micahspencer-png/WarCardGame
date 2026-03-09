@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\WarCardGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BCEF4D55-7FF5-4545-B5BF-E56DC412E799}|WarCardGame\\WarCardGame.csproj|c:\\users\\micas\\onedrive\\documents\\git\\3371\\warcardgame\\warcardgame\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BCEF4D55-7FF5-4545-B5BF-E56DC412E799}|WarCardGame\\WarCardGame.csproj|solutionrelative:warcardgame\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{BCEF4D55-7FF5-4545-B5BF-E56DC412E799}|WarCardGame\\WarCardGame.csproj|c:\\users\\micas\\onedrive\\documents\\git\\3371\\warcardgame\\warcardgame\\deck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCEF4D55-7FF5-4545-B5BF-E56DC412E799}|WarCardGame\\WarCardGame.csproj|solutionrelative:warcardgame\\deck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCEF4D55-7FF5-4545-B5BF-E56DC412E799}|WarCardGame\\WarCardGame.csproj|c:\\users\\micas\\onedrive\\documents\\git\\3371\\warcardgame\\warcardgame\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCEF4D55-7FF5-4545-B5BF-E56DC412E799}|WarCardGame\\WarCardGame.csproj|solutionrelative:warcardgame\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCEF4D55-7FF5-4545-B5BF-E56DC412E799}|WarCardGame\\WarCardGame.csproj|c:\\users\\micas\\onedrive\\documents\\git\\3371\\warcardgame\\warcardgame\\warguiform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BCEF4D55-7FF5-4545-B5BF-E56DC412E799}|WarCardGame\\WarCardGame.csproj|solutionrelative:warcardgame\\warguiform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCEF4D55-7FF5-4545-B5BF-E56DC412E799}|WarCardGame\\WarCardGame.csproj|c:\\users\\micas\\onedrive\\documents\\git\\3371\\warcardgame\\warcardgame\\warguiform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCEF4D55-7FF5-4545-B5BF-E56DC412E799}|WarCardGame\\WarCardGame.csproj|solutionrelative:warcardgame\\warguiform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,11 +35,50 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\WarCardGame\\WarCardGame\\Form1.cs",
-              "RelativeDocumentMoniker": "WarCardGame\\Form1.cs",
-              "ToolTip": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\WarCardGame\\WarCardGame\\Form1.cs [Design]",
-              "RelativeToolTip": "WarCardGame\\Form1.cs [Design]",
+              "Title": "Deck.cs",
+              "DocumentMoniker": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\WarCardGame\\WarCardGame\\Deck.cs",
+              "RelativeDocumentMoniker": "WarCardGame\\Deck.cs",
+              "ToolTip": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\WarCardGame\\WarCardGame\\Deck.cs",
+              "RelativeToolTip": "WarCardGame\\Deck.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwBwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T16:48:48.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Card.cs",
+              "DocumentMoniker": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\WarCardGame\\WarCardGame\\Card.cs",
+              "RelativeDocumentMoniker": "WarCardGame\\Card.cs",
+              "ToolTip": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\WarCardGame\\WarCardGame\\Card.cs",
+              "RelativeToolTip": "WarCardGame\\Card.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAowEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T16:47:41.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WarGUIForm.cs",
+              "DocumentMoniker": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\WarCardGame\\WarCardGame\\WarGUIForm.cs",
+              "RelativeDocumentMoniker": "WarCardGame\\WarGUIForm.cs",
+              "ToolTip": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\WarCardGame\\WarCardGame\\WarGUIForm.cs",
+              "RelativeToolTip": "WarCardGame\\WarGUIForm.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAcwBUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T16:46:59.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WarGUIForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\WarCardGame\\WarCardGame\\WarGUIForm.cs",
+              "RelativeDocumentMoniker": "WarCardGame\\WarGUIForm.cs",
+              "ToolTip": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\WarCardGame\\WarCardGame\\WarGUIForm.cs [Design]",
+              "RelativeToolTip": "WarCardGame\\WarGUIForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-09T16:41:14.993Z",
               "EditorCaption": " [Design]"
