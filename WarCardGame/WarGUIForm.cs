@@ -13,13 +13,13 @@ namespace WarCardGame
     public partial class WarGUIForm : Form
     {
         Deck cardDeck = new Deck();
+        List<Card> playerCards = new List<Card>();
+        List<Card> computerCards = new List<Card>();
+        int cardNum = 0;
         
         public WarGUIForm()
         {
             InitializeComponent();
-            
-            //Card shuffle = cardDeck.Shuffle();
-            //TestBox.Text = $"{cardDeck.Deal()}";
         }
         string[,] CardPics = new string[5,12];
 
@@ -31,13 +31,16 @@ namespace WarCardGame
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //cardDeck.Clear();
+
             Card currentCard = cardDeck.Deal();
-            try
+            if (cardNum % 2 == 0)
             {
-                TestBox.Items.Add($"{currentCard.Rank()} of {currentCard.Suit()}");
+                playerCards.Add(currentCard);
             }
-            catch(Exception) { }
+            else 
+            { 
+                computerCards.Add(currentCard);
+            }
         }
     }
 }
