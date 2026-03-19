@@ -12,7 +12,7 @@ namespace WarCardGame
         Queue<string> numbers = new Queue<string>();
         Stack<string> letter = new Stack<string>();
         private List<Card> _deck = new List<Card>();
-        Card[] list;
+        
 
         public Deck()
         {

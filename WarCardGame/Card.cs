@@ -8,9 +8,7 @@ namespace WarCardGame
 {
     internal class Card
     {
-        string[,] CardPics = new string[12,5];
-        string PicturePath = "..\\..\\..\\CardPics";
-
+       
         public int RankIndex
         {
             get;
