@@ -29,9 +29,35 @@ namespace WarCardGame
         {
             InitializeComponent();
             CardImageLoad();
+            Defaults();
         }
         //Program Logic---------------------------------------------------------------------------------------------------------------------
 
+        void Defaults() 
+        {
+            back = true;
+            war = false;
+            ComHand = 0;
+            PlyHand = 0;
+            cWar = 0;
+            pWar = 0;
+            WarCount = 0;
+            Discard = 0;
+            StartButton.Enabled = true;
+            PlayButton.Enabled = false;
+            ComputerTextBox.BackColor = Color.White;
+            PlayerTextBox.BackColor = Color.White;
+            ComputerTextBox.Text = ComHand.ToString();
+            PlayerTextBox.Text = PlyHand.ToString();
+            DiscardTextBox.Text = Discard.ToString();
+            Image img = null;
+            PlayerPictureBox2.Image = img;
+            ComputerPictureBox2.Image = img;
+            PlayerPictureBox3.Image = img;
+            ComputerPictureBox3.Image = img;
+            PlayerPictureBox4.Image = img;
+            ComputerPictureBox4.Image = img;
+        }
         void CardImageLoad()
         {
             images[0] = Image.FromFile("..\\..\\Resources\\KC.jpg");
@@ -130,14 +156,12 @@ namespace WarCardGame
                 {
                     ComHand++;
                     ComHand++;
-                    ComputerTextBox.Text = "";
                     ComputerTextBox.Text = ComHand.ToString();
                 }
                 else if (cHand < pHand)
                 {
                     PlyHand++;
                     PlyHand++;
-                    PlayerTextBox.Text = "";
                     PlayerTextBox.Text = PlyHand.ToString();
                 }
                 else
@@ -177,6 +201,8 @@ namespace WarCardGame
                 int pIndex = (pHand * 4) + pSuit;
                 Image player = images[pIndex];
                 Image computer = images[cIndex];
+                PlayerHand.RemoveAt(0);
+                ComputerHand.RemoveAt(0);
                 if (WarCount == 0)
                 {
                     PlayerPictureBox4.Image = player;
@@ -217,28 +243,32 @@ namespace WarCardGame
                     pWar++;
                 }
                 WarCount++;
-                PlayerHand.RemoveAt(0);
-                ComputerHand.RemoveAt(0);
-                if (cWar == 2)
-                {
-                    ComHand = ComHand + 6;
-                    war = false;
-                    back = false;
-                    WarCount = 0;
-                }
-                if (pWar == 2)
-                {
-                    PlyHand = PlyHand + 6;
-                    war = false;
-                    back = false;
-                    WarCount = 0;
-                }
+
                 if (WarCount == 3)
                 {
-                    Discard = Discard + 6;
+                    if (pWar > cWar) 
+                    {
+                        int buffer = PlyHand + 8;
+                        PlyHand = buffer;
+                    }
+                    else if (cWar > pWar) 
+                    {
+                        int buffer = ComHand + 8;
+                        ComHand = buffer;
+                    }
+                    else if (cWar == pWar)
+                    {
+                        int buffer = Discard + 8;
+                        Discard = buffer;
+                    }
                     WarCount = 0;
                     war = false;
                     back = false;
+                    cWar = 0;
+                    pWar = 0;
+                    ComputerTextBox.Text = ComHand.ToString();
+                    PlayerTextBox.Text = PlyHand.ToString();
+                    DiscardTextBox.Text = Discard.ToString();
                 }
             }
             catch 
@@ -255,11 +285,15 @@ namespace WarCardGame
                 ComputerTextBox.BackColor = Color.Green;
                 PlayerTextBox.BackColor = Color.Red;
             }
-            if (ComHand < PlyHand)
+            else if (ComHand < PlyHand)
             {
                 MessageBox.Show("You Won");
-                ComputerTextBox.BackColor = Color.Green;
-                PlayerTextBox.BackColor = Color.Red;
+                ComputerTextBox.BackColor = Color.Red;
+                PlayerTextBox.BackColor = Color.Green;
+            }
+            else if (ComHand == PlyHand)
+            {
+                MessageBox.Show("Tie Game");
             }
             PlayButton.Enabled = false;
             StartButton.Enabled = true;
@@ -273,7 +307,6 @@ namespace WarCardGame
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            war = false;
             Deck cardDeck = new Deck();
             for (int i = 0; i < 52; i++)
             {
@@ -287,22 +320,14 @@ namespace WarCardGame
                     ComputerHand.Add(currentCard);
                 }
             }
+            DefaultBack();
+            Defaults();
             StartButton.Enabled = false;
             PlayButton.Enabled = true;
-            DefaultBack();
-            back = true;
-            ComHand = 0;
-            PlyHand = 0;
-            ComputerTextBox.Text = ComHand.ToString();
-            PlayerTextBox.Text = PlyHand.ToString();
         }
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            if (war == true) 
-            {
-                WarCycle();
-            }
             if (back == true && war == false)
             {   
                 Round();
@@ -320,7 +345,10 @@ namespace WarCardGame
                 DefaultBack();
                 back = true;
             }
-
+            else
+            {
+                WarCycle();
+            }
         }
     }
 }
