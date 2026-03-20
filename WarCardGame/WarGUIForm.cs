@@ -12,8 +12,14 @@ using System.Windows.Forms;
 
 namespace WarCardGame
 {
+    //Micah Spencer
+    //RCET 3371
+    //Spring 2026
+    //War Card Game Simulator
+    //https://github.com/micahspencer-png/WarCardGame.git
     public partial class WarGUIForm : Form
     {
+        
         List<Card> PlayerHand = new List<Card>();
         List<Card> ComputerHand = new List<Card>();
         Image[] images = new Image[54];
