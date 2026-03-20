@@ -260,6 +260,7 @@ namespace WarCardGame
                     {
                         int buffer = Discard + 8;
                         Discard = buffer;
+                        MessageBox.Show("Match Ended in Draw. Cards are Discarded");
                     }
                     WarCount = 0;
                     war = false;
@@ -297,6 +298,7 @@ namespace WarCardGame
             }
             PlayButton.Enabled = false;
             StartButton.Enabled = true;
+            StartButton.Focus();
         }
 
         //Event Handlers--------------------------------------------------------------------------------------------------------------------
