@@ -45,7 +45,7 @@
             this.DisplayPictureBox.Size = new System.Drawing.Size(992, 354);
             this.DisplayPictureBox.TabIndex = 0;
             this.DisplayPictureBox.TabStop = false;
-            this.DisplayPictureBox.MouseMove += DisplayPictureBox_MouseMove;
+            this.DisplayPictureBox.MouseMove += DisplayMove;
             // 
             // ExitButton
             // 
@@ -79,7 +79,6 @@
             // 
             // DataAqTimer
             // 
-            this.DataAqTimer.Enabled = true;
             this.DataAqTimer.Tick += new System.EventHandler(this.DataAqTimer_Tick);
             // 
             // DataLoggingForm
@@ -100,12 +99,6 @@
             this.ResumeLayout(false);
 
         }
-
-        private void DisplayPictureBox_MouseMove1(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
         #endregion
 
         private System.Windows.Forms.PictureBox DisplayPictureBox;

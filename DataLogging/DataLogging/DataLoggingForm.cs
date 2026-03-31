@@ -26,13 +26,14 @@ namespace DataLogging
         }
 
         private static int oldX = 0;
+        private static int oldY = 0;
         void DrawVerticalLine(int newX) 
         {
             Graphics g = DisplayPictureBox.CreateGraphics();
-            Pen thePen = new Pen(Color.LimeGreen,1);
-            Pen erase = new Pen(Color.Black,1);
-            g.DrawLine(thePen, newX, 0, newX,DisplayPictureBox.Height);
-            g.DrawLine(erase, oldX, 0, oldX, DisplayPictureBox.Height);
+            Pen thePen = new Pen(Color.Black,1);
+            g.DrawLine(thePen, oldX, 0, oldX,DisplayPictureBox.Height);
+            thePen.Color = Color.Lime;
+            g.DrawLine(thePen, newX, 0, newX, DisplayPictureBox.Height);
             g.Dispose();
             thePen.Dispose();
         }
@@ -45,26 +46,35 @@ namespace DataLogging
 
         void GrabDataPoint() 
         {
-            this.dataBuffer.Add(RandomNumberZeroTo(DisplayPictureBox.Height, 0));
+            if (this.dataBuffer.Count >= 100)
+            {
+                dataBuffer.RemoveAt(0);    
+            }
+            this.dataBuffer.Add(RandomNumberZeroTo(DisplayPictureBox.Height, 0)); 
         }
 
         void GraphDataPoint(int dataX,int dataY) 
         {
             Graphics g = DisplayPictureBox.CreateGraphics();
-            Pen thePen = new Pen(Color.LimeGreen, 1);
-            g.DrawLine(thePen, dataX-1,dataY,dataX,dataY);
+            Pen thePen = new Pen(Color.Black, 1);
+            g.DrawLine(thePen,dataX,0,dataX,DisplayPictureBox.Height);
+            thePen.Color = Color.Lime;
+            g.DrawLine(thePen, dataX-1,oldY,dataX,dataY);
+            oldY = dataY;
             g.Dispose();
             thePen.Dispose();
         }
 
         void UpdateGraph() 
         {
+            //DisplayPictureBox.Refresh();
             int dataX = 0;
             foreach (int dataY in this.dataBuffer) 
             {
                 GraphDataPoint(dataX,dataY);
                 dataX++;
             }
+            
         }
 
         //Event Handlers------------------------------------------------------------------------------------------------------------------------
@@ -75,6 +85,7 @@ namespace DataLogging
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
+            DisplayPictureBox.Refresh();
             SetDefaults();
         }
 
@@ -90,13 +101,12 @@ namespace DataLogging
             }
         }
 
-        private void DisplayPictureBox_MouseMove(object sender, MouseEventArgs e) 
+        private void DisplayMove(object sender, MouseEventArgs e) 
         { 
             this.Text = e.X.ToString();
             DrawVerticalLine(e.X);
             oldX = e.X;
         }
-
         private void DataAqTimer_Tick(object sender, EventArgs e)
         {
             GrabDataPoint();
