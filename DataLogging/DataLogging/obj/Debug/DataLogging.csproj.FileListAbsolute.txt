@@ -1,0 +1,10 @@
+C:\Users\Micas\OneDrive\Documents\Git\3371\DataLogging\DataLogging\bin\Debug\DataLogging.exe.config
+C:\Users\Micas\OneDrive\Documents\Git\3371\DataLogging\DataLogging\bin\Debug\DataLogging.exe
+C:\Users\Micas\OneDrive\Documents\Git\3371\DataLogging\DataLogging\bin\Debug\DataLogging.pdb
+C:\Users\Micas\OneDrive\Documents\Git\3371\DataLogging\DataLogging\obj\Debug\DataLogging.csproj.AssemblyReference.cache
+C:\Users\Micas\OneDrive\Documents\Git\3371\DataLogging\DataLogging\obj\Debug\DataLogging.DataLoggingForm.resources
+C:\Users\Micas\OneDrive\Documents\Git\3371\DataLogging\DataLogging\obj\Debug\DataLogging.Properties.Resources.resources
+C:\Users\Micas\OneDrive\Documents\Git\3371\DataLogging\DataLogging\obj\Debug\DataLogging.csproj.GenerateResource.cache
+C:\Users\Micas\OneDrive\Documents\Git\3371\DataLogging\DataLogging\obj\Debug\DataLogging.csproj.CoreCompileInputs.cache
+C:\Users\Micas\OneDrive\Documents\Git\3371\DataLogging\DataLogging\obj\Debug\DataLogging.exe
+C:\Users\Micas\OneDrive\Documents\Git\3371\DataLogging\DataLogging\obj\Debug\DataLogging.pdb
