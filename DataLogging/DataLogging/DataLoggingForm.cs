@@ -48,6 +48,25 @@ namespace DataLogging
             this.dataBuffer.Add(RandomNumberZeroTo(DisplayPictureBox.Height, 0));
         }
 
+        void GraphDataPoint(int dataX,int dataY) 
+        {
+            Graphics g = DisplayPictureBox.CreateGraphics();
+            Pen thePen = new Pen(Color.LimeGreen, 1);
+            g.DrawLine(thePen, dataX-1,dataY,dataX,dataY);
+            g.Dispose();
+            thePen.Dispose();
+        }
+
+        void UpdateGraph() 
+        {
+            int dataX = 0;
+            foreach (int dataY in this.dataBuffer) 
+            {
+                GraphDataPoint(dataX,dataY);
+                dataX++;
+            }
+        }
+
         //Event Handlers------------------------------------------------------------------------------------------------------------------------
         private void ExitButton_Click(object sender, EventArgs e)
         {
@@ -61,7 +80,14 @@ namespace DataLogging
 
         private void GraphButton_Click(object sender, EventArgs e)
         {
-            
+            if (DataAqTimer.Enabled == true)
+            {
+                DataAqTimer.Enabled = false;
+            }
+            else 
+            { 
+                DataAqTimer.Enabled = true;
+            }
         }
 
         private void DisplayPictureBox_MouseMove(object sender, MouseEventArgs e) 
@@ -74,6 +100,7 @@ namespace DataLogging
         private void DataAqTimer_Tick(object sender, EventArgs e)
         {
             GrabDataPoint();
+            UpdateGraph();
         }
     }
 }

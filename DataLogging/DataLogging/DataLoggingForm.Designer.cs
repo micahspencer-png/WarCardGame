@@ -79,6 +79,7 @@
             // 
             // DataAqTimer
             // 
+            this.DataAqTimer.Enabled = true;
             this.DataAqTimer.Tick += new System.EventHandler(this.DataAqTimer_Tick);
             // 
             // DataLoggingForm
@@ -98,6 +99,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.DisplayPictureBox)).EndInit();
             this.ResumeLayout(false);
 
+        }
+
+        private void DisplayPictureBox_MouseMove1(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
 
         #endregion
