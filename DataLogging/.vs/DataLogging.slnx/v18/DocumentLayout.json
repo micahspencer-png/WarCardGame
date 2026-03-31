@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\DataLogging\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CDC73C8A-CA24-4612-A16B-6AC48FC92E5B}|DataLogging\\DataLogging.csproj|c:\\users\\micas\\onedrive\\documents\\git\\3371\\datalogging\\datalogging\\dataloggingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC73C8A-CA24-4612-A16B-6AC48FC92E5B}|DataLogging\\DataLogging.csproj|solutionrelative:datalogging\\dataloggingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC73C8A-CA24-4612-A16B-6AC48FC92E5B}|DataLogging\\DataLogging.csproj|c:\\users\\micas\\onedrive\\documents\\git\\3371\\datalogging\\datalogging\\dataloggingform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC73C8A-CA24-4612-A16B-6AC48FC92E5B}|DataLogging\\DataLogging.csproj|solutionrelative:datalogging\\dataloggingform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CDC73C8A-CA24-4612-A16B-6AC48FC92E5B}|DataLogging\\DataLogging.csproj|c:\\users\\micas\\onedrive\\documents\\git\\3371\\datalogging\\datalogging\\dataloggingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CDC73C8A-CA24-4612-A16B-6AC48FC92E5B}|DataLogging\\DataLogging.csproj|solutionrelative:datalogging\\dataloggingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
@@ -14,11 +22,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DataLoggingForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\DataLogging\\DataLogging\\DataLoggingForm.Designer.cs",
+              "RelativeDocumentMoniker": "DataLogging\\DataLoggingForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\DataLogging\\DataLogging\\DataLoggingForm.Designer.cs",
+              "RelativeToolTip": "DataLogging\\DataLoggingForm.Designer.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwCYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T15:28:20.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "DataLoggingForm.cs",
+              "DocumentMoniker": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\DataLogging\\DataLogging\\DataLoggingForm.cs",
+              "RelativeDocumentMoniker": "DataLogging\\DataLoggingForm.cs",
+              "ToolTip": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\DataLogging\\DataLogging\\DataLoggingForm.cs*",
+              "RelativeToolTip": "DataLogging\\DataLoggingForm.cs*",
+              "ViewState": "AgIAABUAAAAAAAAAAAAgwB8AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T15:20:15.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "DataLoggingForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\DataLogging\\DataLogging\\DataLoggingForm.cs",
               "RelativeDocumentMoniker": "DataLogging\\DataLoggingForm.cs",

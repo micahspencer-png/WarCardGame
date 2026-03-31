@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.DisplayPictureBox = new System.Windows.Forms.PictureBox();
+            this.ExitButton = new System.Windows.Forms.Button();
+            this.ClearButton = new System.Windows.Forms.Button();
+            this.GraphButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DisplayPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,12 +43,46 @@
             this.DisplayPictureBox.Size = new System.Drawing.Size(992, 354);
             this.DisplayPictureBox.TabIndex = 0;
             this.DisplayPictureBox.TabStop = false;
+            this.DisplayPictureBox.MouseMove += DisplayPictureBox_MouseMove;
+            // 
+            // ExitButton
+            // 
+            this.ExitButton.Location = new System.Drawing.Point(915, 501);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(89, 51);
+            this.ExitButton.TabIndex = 1;
+            this.ExitButton.Text = "E&xit";
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // ClearButton
+            // 
+            this.ClearButton.Location = new System.Drawing.Point(820, 501);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(89, 51);
+            this.ClearButton.TabIndex = 1;
+            this.ClearButton.Text = "&Clear";
+            this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            // 
+            // GraphButton
+            // 
+            this.GraphButton.Location = new System.Drawing.Point(725, 501);
+            this.GraphButton.Name = "GraphButton";
+            this.GraphButton.Size = new System.Drawing.Size(89, 51);
+            this.GraphButton.TabIndex = 1;
+            this.GraphButton.Text = "&Graph";
+            this.GraphButton.UseVisualStyleBackColor = true;
+            this.GraphButton.Click += new System.EventHandler(this.GraphButton_Click);
             // 
             // DataLoggingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 564);
+            this.Controls.Add(this.GraphButton);
+            this.Controls.Add(this.ClearButton);
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.DisplayPictureBox);
             this.MaximizeBox = false;
             this.Name = "DataLoggingForm";
@@ -60,6 +97,9 @@
         #endregion
 
         private System.Windows.Forms.PictureBox DisplayPictureBox;
+        private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.Button ClearButton;
+        private System.Windows.Forms.Button GraphButton;
     }
 }
 
