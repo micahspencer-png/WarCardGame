@@ -12,6 +12,7 @@ namespace DataLogging
 {
     public partial class DataLoggingForm : Form
     {
+        private List<int> dataBuffer = new List<int>(); // data y values
         public DataLoggingForm()
         {
             InitializeComponent();
@@ -35,10 +36,16 @@ namespace DataLogging
             g.Dispose();
             thePen.Dispose();
         }
+        private readonly Random random = new Random();
+        private int RandomNumberZeroTo(int max, int min) 
+        {
+            int temp = max - min;
+            return random.Next(0,temp) + min;
+        }
 
-        void GraphDataPoints() 
-        { 
-            
+        void GrabDataPoint() 
+        {
+            this.dataBuffer.Add(RandomNumberZeroTo(DisplayPictureBox.Height, 0));
         }
 
         //Event Handlers------------------------------------------------------------------------------------------------------------------------
@@ -62,6 +69,11 @@ namespace DataLogging
             this.Text = e.X.ToString();
             DrawVerticalLine(e.X);
             oldX = e.X;
+        }
+
+        private void DataAqTimer_Tick(object sender, EventArgs e)
+        {
+            GrabDataPoint();
         }
     }
 }

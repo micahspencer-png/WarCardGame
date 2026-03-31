@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.DisplayPictureBox = new System.Windows.Forms.PictureBox();
             this.ExitButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.GraphButton = new System.Windows.Forms.Button();
+            this.DataAqTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DisplayPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +77,10 @@
             this.GraphButton.UseVisualStyleBackColor = true;
             this.GraphButton.Click += new System.EventHandler(this.GraphButton_Click);
             // 
+            // DataAqTimer
+            // 
+            this.DataAqTimer.Tick += new System.EventHandler(this.DataAqTimer_Tick);
+            // 
             // DataLoggingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -100,6 +106,7 @@
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Button GraphButton;
+        private System.Windows.Forms.Timer DataAqTimer;
     }
 }
 
