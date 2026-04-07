@@ -24,6 +24,7 @@ namespace DataLogging
         void SetDefaults() 
         { 
             DisplayPictureBox.BackColor = Color.Black;
+            LoadLogFiles();
         }
 
         private static int oldX = 0;
@@ -47,7 +48,7 @@ namespace DataLogging
 
         void GrabDataPoint() 
         {
-            int currentData = RandomNumberZeroTo(DisplayPictureBox.Height, 0);
+            int currentData = RandomNumberZeroTo(100, 0);
             if (this.dataBuffer.Count >= 100)
             {
                 dataBuffer.RemoveAt(0);    
@@ -59,8 +60,13 @@ namespace DataLogging
         void GraphDataPoint(int dataX,int dataY) 
         {
             Graphics g = DisplayPictureBox.CreateGraphics();
+            float sx = DisplayPictureBox.Width / 100F;
+            float sy = DisplayPictureBox.Height / 100F;
+            g.ScaleTransform(sx, sy * -1);
+            g.TranslateTransform(0, -100);
             Pen thePen = new Pen(Color.Black, 1);
-            g.DrawLine(thePen,dataX,0,dataX,DisplayPictureBox.Height);
+            g.DrawLine(thePen,dataX,0,dataX,100);
+            thePen.Width = 0.25F;
             thePen.Color = Color.Lime;
             g.DrawLine(thePen, dataX-1,oldY,dataX,dataY);
             oldY = dataY;
@@ -87,22 +93,52 @@ namespace DataLogging
                 string path = $"..\\..\\logs\\{DateTime.Now.ToString("yyMMddHH")}.log";
                 using (StreamWriter currentFile = File.AppendText(path))
                 {
-                    currentFile.WriteLine($"{DateTime.Now:yyMMddHH,mm,ss}{DateTime.Now.Millisecond.ToString("###")},{currentData}");
+                    currentFile.WriteLine($"{DateTime.Now:yyMMddHHmmss}{DateTime.Now.Millisecond.ToString("#####")},{currentData}");
                 }
             }
             catch (Exception ex)
             {
-                string path = $"..\\..\\logs\\{DateTime.Now.ToString("yyMMddHH")}.log";
-                using (StreamWriter currentFile = File.CreateText(path))
-                {
-                    currentFile.WriteLine($"{DateTime.Now:yyMMddHH,mm,ss}{DateTime.Now.Millisecond.ToString("###")},{currentData}");
-                }
             }
         }
 
         void LoadLogFiles()
         {
-            string[] logFiles = Directory.GetFiles("..\\..\\logs\\*.log");
+            LogComboBox.Items.Clear();
+            try
+            {
+                string[] logFiles = Directory.GetFiles("..\\..\\logs", "*.log");
+                foreach (string logFile in logFiles)
+                {
+                    string[] location = logFile.Split('\\');
+                    LogComboBox.Items.Add(location[3]);
+                }
+            }
+            catch 
+            { 
+            
+            }
+        }
+
+        void GraphLogFile() 
+        {
+            string path = $"..\\..\\logs\\{LogComboBox.SelectedItem.ToString()}";
+            string[] temp;
+            int length = 0;
+            dataBuffer.Clear();
+            using (StreamReader currentFile = new StreamReader(path)) 
+            {
+                while (!currentFile.EndOfStream) 
+                {
+                    temp = currentFile.ReadLine().Split(',');
+                    dataBuffer.Add(int.Parse(temp[1]));
+                    length++;
+                }
+            }
+            DataTrackBar.Maximum = length-100;
+            for (int i = 0; i < 100; i++)
+            {
+                GraphDataPoint(i, dataBuffer.ElementAt(i));
+            }
         }
 
         //Event Handlers------------------------------------------------------------------------------------------------------------------------
@@ -122,10 +158,14 @@ namespace DataLogging
             if (DataAqTimer.Enabled == true)
             {
                 DataAqTimer.Enabled = false;
+                DataTrackBar.Enabled = true;
+                LoadLogFiles();
             }
             else 
             { 
                 DataAqTimer.Enabled = true;
+                DataTrackBar.Enabled = false;
+                DataTrackBar.Value = 0;
             }
         }
 
@@ -143,7 +183,24 @@ namespace DataLogging
 
         private void LogComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            GraphLogFile();
+            ReloadButton.Enabled = true;
+        }
 
+        private void DataTrackBar_Scroll(object sender, EventArgs e)
+        {
+            int val = 0;
+            val = DataTrackBar.Value;
+            for (int i = 0; i < 100; i++) 
+            {
+                GraphDataPoint(i,dataBuffer.ElementAt(val+i));
+            }
+        }
+
+        private void ReloadButton_Click(object sender, EventArgs e)
+        {
+            GraphLogFile();
+            DataTrackBar.Value = 0;
         }
     }
 }

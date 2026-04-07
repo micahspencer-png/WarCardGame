@@ -35,7 +35,10 @@
             this.GraphButton = new System.Windows.Forms.Button();
             this.DataAqTimer = new System.Windows.Forms.Timer(this.components);
             this.LogComboBox = new System.Windows.Forms.ComboBox();
+            this.DataTrackBar = new System.Windows.Forms.TrackBar();
+            this.ReloadButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DisplayPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // DisplayPictureBox
@@ -91,11 +94,32 @@
             this.LogComboBox.TabIndex = 2;
             this.LogComboBox.SelectedIndexChanged += new System.EventHandler(this.LogComboBox_SelectedIndexChanged);
             // 
+            // DataTrackBar
+            // 
+            this.DataTrackBar.Location = new System.Drawing.Point(12, 372);
+            this.DataTrackBar.Name = "DataTrackBar";
+            this.DataTrackBar.Size = new System.Drawing.Size(271, 56);
+            this.DataTrackBar.TabIndex = 3;
+            this.DataTrackBar.Scroll += new System.EventHandler(this.DataTrackBar_Scroll);
+            // 
+            // ReloadButton
+            // 
+            this.ReloadButton.Enabled = false;
+            this.ReloadButton.Location = new System.Drawing.Point(638, 501);
+            this.ReloadButton.Name = "ReloadButton";
+            this.ReloadButton.Size = new System.Drawing.Size(87, 50);
+            this.ReloadButton.TabIndex = 4;
+            this.ReloadButton.Text = "&Reload";
+            this.ReloadButton.UseVisualStyleBackColor = true;
+            this.ReloadButton.Click += new System.EventHandler(this.ReloadButton_Click);
+            // 
             // DataLoggingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 564);
+            this.Controls.Add(this.ReloadButton);
+            this.Controls.Add(this.DataTrackBar);
             this.Controls.Add(this.LogComboBox);
             this.Controls.Add(this.GraphButton);
             this.Controls.Add(this.ClearButton);
@@ -107,7 +131,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Data Logging Form";
             ((System.ComponentModel.ISupportInitialize)(this.DisplayPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataTrackBar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
         #endregion
@@ -118,6 +144,8 @@
         private System.Windows.Forms.Button GraphButton;
         private System.Windows.Forms.Timer DataAqTimer;
         private System.Windows.Forms.ComboBox LogComboBox;
+        private System.Windows.Forms.TrackBar DataTrackBar;
+        private System.Windows.Forms.Button ReloadButton;
     }
 }
 
