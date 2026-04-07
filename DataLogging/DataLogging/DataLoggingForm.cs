@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,11 +47,13 @@ namespace DataLogging
 
         void GrabDataPoint() 
         {
+            int currentData = RandomNumberZeroTo(DisplayPictureBox.Height, 0);
             if (this.dataBuffer.Count >= 100)
             {
                 dataBuffer.RemoveAt(0);    
             }
-            this.dataBuffer.Add(RandomNumberZeroTo(DisplayPictureBox.Height, 0)); 
+            this.dataBuffer.Add(currentData);
+            LogDataToFile(currentData);
         }
 
         void GraphDataPoint(int dataX,int dataY) 
@@ -75,6 +78,31 @@ namespace DataLogging
                 dataX++;
             }
             
+        }
+
+        void LogDataToFile(int currentData)
+        {
+            try
+            {
+                string path = $"..\\..\\logs\\{DateTime.Now.ToString("yyMMddHH")}.log";
+                using (StreamWriter currentFile = File.AppendText(path))
+                {
+                    currentFile.WriteLine($"{DateTime.Now:yyMMddHH,mm,ss}{DateTime.Now.Millisecond.ToString("###")},{currentData}");
+                }
+            }
+            catch (Exception ex)
+            {
+                string path = $"..\\..\\logs\\{DateTime.Now.ToString("yyMMddHH")}.log";
+                using (StreamWriter currentFile = File.CreateText(path))
+                {
+                    currentFile.WriteLine($"{DateTime.Now:yyMMddHH,mm,ss}{DateTime.Now.Millisecond.ToString("###")},{currentData}");
+                }
+            }
+        }
+
+        void LoadLogFiles()
+        {
+            string[] logFiles = Directory.GetFiles("..\\..\\logs\\*.log");
         }
 
         //Event Handlers------------------------------------------------------------------------------------------------------------------------
@@ -111,6 +139,11 @@ namespace DataLogging
         {
             GrabDataPoint();
             UpdateGraph();
+        }
+
+        private void LogComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

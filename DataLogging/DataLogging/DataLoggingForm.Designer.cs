@@ -34,6 +34,7 @@
             this.ClearButton = new System.Windows.Forms.Button();
             this.GraphButton = new System.Windows.Forms.Button();
             this.DataAqTimer = new System.Windows.Forms.Timer(this.components);
+            this.LogComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DisplayPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +46,6 @@
             this.DisplayPictureBox.Size = new System.Drawing.Size(992, 354);
             this.DisplayPictureBox.TabIndex = 0;
             this.DisplayPictureBox.TabStop = false;
-            this.DisplayPictureBox.MouseMove += DisplayMove;
             // 
             // ExitButton
             // 
@@ -81,11 +81,22 @@
             // 
             this.DataAqTimer.Tick += new System.EventHandler(this.DataAqTimer_Tick);
             // 
+            // LogComboBox
+            // 
+            this.LogComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogComboBox.FormattingEnabled = true;
+            this.LogComboBox.Location = new System.Drawing.Point(812, 372);
+            this.LogComboBox.Name = "LogComboBox";
+            this.LogComboBox.Size = new System.Drawing.Size(192, 33);
+            this.LogComboBox.TabIndex = 2;
+            this.LogComboBox.SelectedIndexChanged += new System.EventHandler(this.LogComboBox_SelectedIndexChanged);
+            // 
             // DataLoggingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 564);
+            this.Controls.Add(this.LogComboBox);
             this.Controls.Add(this.GraphButton);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.ExitButton);
@@ -106,6 +117,7 @@
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Button GraphButton;
         private System.Windows.Forms.Timer DataAqTimer;
+        private System.Windows.Forms.ComboBox LogComboBox;
     }
 }
 
