@@ -49,6 +49,8 @@
             this.DisplayPictureBox.Size = new System.Drawing.Size(992, 354);
             this.DisplayPictureBox.TabIndex = 0;
             this.DisplayPictureBox.TabStop = false;
+            this.DisplayPictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DisplayMove);
+            this.DisplayPictureBox.Paint += this.PaintLine;
             // 
             // ExitButton
             // 
