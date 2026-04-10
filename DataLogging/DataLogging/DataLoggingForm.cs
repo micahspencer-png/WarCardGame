@@ -62,11 +62,6 @@ namespace DataLogging
             DisplayPictureBox.Invalidate();
         }
         private readonly Random random = new Random();
-        private int RandomNumberZeroTo(int max, int min) 
-        {
-            int temp = max - min;
-            return random.Next(0,temp) + min;
-        }
         private int AnalogValues() 
         {
             int conversion = 0;
@@ -128,10 +123,19 @@ namespace DataLogging
         {
             try
             {
+                string analog = "";
+                if (Analog1RadioButton.Checked == true) 
+                {
+                    analog = "Analog1: ";
+                }
+                if (Analog2RadioButton.Checked == true) 
+                {
+                    analog = "Analog2: ";
+                }
                 string path = $"..\\..\\logs\\{DateTime.Now.ToString("yyMMddHH")}.log";
                 using (StreamWriter currentFile = File.AppendText(path))
                 {
-                    currentFile.WriteLine($"{DateTime.Now:yyMMddHHmmss}{DateTime.Now.Millisecond.ToString("#####")},{currentData}");
+                    currentFile.WriteLine($"{DateTime.Now:yyMMddHHmmss}{DateTime.Now.Millisecond.ToString("#####")},{analog}{currentData}");
                 }
             }
             catch (Exception ex)
