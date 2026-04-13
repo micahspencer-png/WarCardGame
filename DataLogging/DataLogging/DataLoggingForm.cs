@@ -74,7 +74,8 @@ namespace DataLogging
             {
                 analog = int.Parse(Analog2StatusLabel.Text);
             }
-            conversion = analog*100/1024;
+            conversion = analog*99/1024;
+            conversion++;
             return conversion;
         }
         void GrabDataPoint() 
@@ -124,18 +125,21 @@ namespace DataLogging
             try
             {
                 string analog = "";
+                int analogData = 0;
                 if (Analog1RadioButton.Checked == true) 
                 {
-                    analog = "Analog1: ";
+                    analog = "Analog1:";
+                    analogData = int.Parse(Analog1StatusLabel.Text);
                 }
                 if (Analog2RadioButton.Checked == true) 
                 {
-                    analog = "Analog2: ";
+                    analog = "Analog2:";
+                    analogData = int.Parse(Analog2StatusLabel.Text);
                 }
-                string path = $"..\\..\\logs\\{DateTime.Now.ToString("yyMMddHH")}.log";
+                string path = $"..\\..\\logs\\log_{DateTime.Now.ToString("yyMMddHH")}.log";
                 using (StreamWriter currentFile = File.AppendText(path))
                 {
-                    currentFile.WriteLine($"{DateTime.Now:yyMMddHHmmss}{DateTime.Now.Millisecond.ToString("#####")},{analog}{currentData}");
+                    currentFile.WriteLine($"{DateTime.Now:yy/MM/dd/HH:mm:ss.}{DateTime.Now.Millisecond:D3},{analog},{currentData},Display Value,{analogData}");
                 }
             }
             catch (Exception ex)
@@ -172,14 +176,24 @@ namespace DataLogging
                 while (!currentFile.EndOfStream) 
                 {
                     temp = currentFile.ReadLine().Split(',');
-                    dataBuffer.Add(int.Parse(temp[1]));
+                    dataBuffer.Add(int.Parse(temp[2]));
                     length++;
                 }
             }
             DataTrackBar.Maximum = length-100;
-            for (int i = 0; i < 100; i++)
+            if (DataTrackBar.Maximum < 0) 
             {
-                GraphDataPoint(i, dataBuffer.ElementAt(i));
+                DataTrackBar.Maximum = 0;
+            }
+            try
+            {
+                for (int i = 0; i < 100; i++)
+                {
+                    GraphDataPoint(i, dataBuffer.ElementAt(i));
+                }
+            }
+            catch (Exception ex) 
+            { 
             }
         }
 
@@ -354,6 +368,7 @@ namespace DataLogging
                     LoadLogFiles();
                     Analog1RadioButton.Enabled = true;
                     Analog2RadioButton.Enabled = true;
+                    DisplayValueTextBox.Show();
                 }
                 else
                 {
@@ -362,6 +377,7 @@ namespace DataLogging
                     DataTrackBar.Value = 0;
                     Analog1RadioButton.Enabled = false;
                     Analog2RadioButton.Enabled = false;
+                    DisplayValueTextBox.Hide();
                 }
             }
             else 
@@ -372,8 +388,11 @@ namespace DataLogging
         }
 
         private void DisplayMove(object sender, MouseEventArgs e) 
-        { 
-            this.Text = e.Y.ToString();
+        {
+            int y = e.Y;
+            double value = (y-285)*(-(1024.0/285.0));
+            value = Math.Round(value);
+            DisplayValueTextBox.Text = value.ToString();
             DrawVerticalLine(e.X);
         }
         private void DataAqTimer_Tick(object sender, EventArgs e)
@@ -402,7 +421,7 @@ namespace DataLogging
         private void ReloadButton_Click(object sender, EventArgs e)
         {
             GraphLogFile();
-            DataTrackBar.Value = DataTrackBar.Maximum;
+            DataTrackBar.Value = 0;
             DataTrackBar.Enabled = true;
         }
         private void PaintLine(object sender, PaintEventArgs e)

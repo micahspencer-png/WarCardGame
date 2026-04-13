@@ -41,15 +41,16 @@
             this.TimeComboBox = new System.Windows.Forms.ComboBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.PortStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.AnalogStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.Analog1StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.AnalogStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.Analog2StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.Analog1RadioButton = new System.Windows.Forms.RadioButton();
             this.Analog2RadioButton = new System.Windows.Forms.RadioButton();
             this.Reloadtimer = new System.Windows.Forms.Timer(this.components);
             this.ConnectButton = new System.Windows.Forms.Button();
             this.RefreshButton = new System.Windows.Forms.Button();
-            this.AnalogStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.AnalogStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DisplayValueTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DisplayPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataTrackBar)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -169,11 +170,23 @@
             this.PortStatusLabel.Size = new System.Drawing.Size(53, 20);
             this.PortStatusLabel.Text = "Label1";
             // 
+            // AnalogStatusLabel1
+            // 
+            this.AnalogStatusLabel1.Name = "AnalogStatusLabel1";
+            this.AnalogStatusLabel1.Size = new System.Drawing.Size(68, 20);
+            this.AnalogStatusLabel1.Text = "Analog1:";
+            // 
             // Analog1StatusLabel
             // 
             this.Analog1StatusLabel.Name = "Analog1StatusLabel";
             this.Analog1StatusLabel.Size = new System.Drawing.Size(53, 20);
             this.Analog1StatusLabel.Text = "Label2";
+            // 
+            // AnalogStatusLabel2
+            // 
+            this.AnalogStatusLabel2.Name = "AnalogStatusLabel2";
+            this.AnalogStatusLabel2.Size = new System.Drawing.Size(68, 20);
+            this.AnalogStatusLabel2.Text = "Analog2:";
             // 
             // Analog2StatusLabel
             // 
@@ -231,23 +244,20 @@
             this.RefreshButton.UseVisualStyleBackColor = true;
             this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
-            // AnalogStatusLabel1
+            // DisplayValueTextBox
             // 
-            this.AnalogStatusLabel1.Name = "AnalogStatusLabel1";
-            this.AnalogStatusLabel1.Size = new System.Drawing.Size(68, 20);
-            this.AnalogStatusLabel1.Text = "Analog1:";
-            // 
-            // AnalogStatusLabel2
-            // 
-            this.AnalogStatusLabel2.Name = "AnalogStatusLabel2";
-            this.AnalogStatusLabel2.Size = new System.Drawing.Size(68, 20);
-            this.AnalogStatusLabel2.Text = "Analog2:";
+            this.DisplayValueTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DisplayValueTextBox.Location = new System.Drawing.Point(363, 423);
+            this.DisplayValueTextBox.Name = "DisplayValueTextBox";
+            this.DisplayValueTextBox.Size = new System.Drawing.Size(100, 30);
+            this.DisplayValueTextBox.TabIndex = 11;
             // 
             // DataLoggingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 564);
+            this.Controls.Add(this.DisplayValueTextBox);
             this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.ConnectButton);
             this.Controls.Add(this.Analog2RadioButton);
@@ -298,6 +308,7 @@
         private System.Windows.Forms.Button RefreshButton;
         private System.Windows.Forms.ToolStripStatusLabel AnalogStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel AnalogStatusLabel2;
+        private System.Windows.Forms.TextBox DisplayValueTextBox;
     }
 }
 
