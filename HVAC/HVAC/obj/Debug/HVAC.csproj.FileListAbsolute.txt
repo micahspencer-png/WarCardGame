@@ -1,0 +1,10 @@
+C:\Users\Micas\OneDrive\Documents\Git\3371\HVAC\HVAC\obj\Debug\HVAC.csproj.AssemblyReference.cache
+C:\Users\Micas\OneDrive\Documents\Git\3371\HVAC\HVAC\obj\Debug\HVACSmartHomeController.HVACSystem.resources
+C:\Users\Micas\OneDrive\Documents\Git\3371\HVAC\HVAC\obj\Debug\HVAC.Properties.Resources.resources
+C:\Users\Micas\OneDrive\Documents\Git\3371\HVAC\HVAC\obj\Debug\HVAC.csproj.GenerateResource.cache
+C:\Users\Micas\OneDrive\Documents\Git\3371\HVAC\HVAC\obj\Debug\HVAC.csproj.CoreCompileInputs.cache
+C:\Users\Micas\OneDrive\Documents\Git\3371\HVAC\HVAC\bin\Debug\HVAC.exe.config
+C:\Users\Micas\OneDrive\Documents\Git\3371\HVAC\HVAC\bin\Debug\HVAC.exe
+C:\Users\Micas\OneDrive\Documents\Git\3371\HVAC\HVAC\bin\Debug\HVAC.pdb
+C:\Users\Micas\OneDrive\Documents\Git\3371\HVAC\HVAC\obj\Debug\HVAC.exe
+C:\Users\Micas\OneDrive\Documents\Git\3371\HVAC\HVAC\obj\Debug\HVAC.pdb

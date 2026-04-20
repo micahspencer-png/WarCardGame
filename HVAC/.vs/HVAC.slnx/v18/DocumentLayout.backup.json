@@ -1,0 +1,78 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\HVAC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CA71F7F9-1582-43E9-A6D2-DC8EE2A9DCB4}|HVAC\\HVAC.csproj|c:\\users\\micas\\onedrive\\documents\\git\\3371\\hvac\\hvac\\hvacsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA71F7F9-1582-43E9-A6D2-DC8EE2A9DCB4}|HVAC\\HVAC.csproj|solutionrelative:hvac\\hvacsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA71F7F9-1582-43E9-A6D2-DC8EE2A9DCB4}|HVAC\\HVAC.csproj|c:\\users\\micas\\onedrive\\documents\\git\\3371\\hvac\\hvac\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CA71F7F9-1582-43E9-A6D2-DC8EE2A9DCB4}|HVAC\\HVAC.csproj|solutionrelative:hvac\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CA71F7F9-1582-43E9-A6D2-DC8EE2A9DCB4}|HVAC\\HVAC.csproj|c:\\users\\micas\\onedrive\\documents\\git\\3371\\hvac\\hvac\\hvacsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CA71F7F9-1582-43E9-A6D2-DC8EE2A9DCB4}|HVAC\\HVAC.csproj|solutionrelative:hvac\\hvacsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\HVAC\\HVAC\\Program.cs",
+              "RelativeDocumentMoniker": "HVAC\\Program.cs",
+              "ToolTip": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\HVAC\\HVAC\\Program.cs*",
+              "RelativeToolTip": "HVAC\\Program.cs*",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAjwBEAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T17:09:22.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HVACSystem.cs",
+              "DocumentMoniker": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\HVAC\\HVAC\\HVACSystem.cs",
+              "RelativeDocumentMoniker": "HVAC\\HVACSystem.cs",
+              "ToolTip": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\HVAC\\HVAC\\HVACSystem.cs",
+              "RelativeToolTip": "HVAC\\HVACSystem.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAKMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T17:00:55.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HVACSystem.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\HVAC\\HVAC\\HVACSystem.cs",
+              "RelativeDocumentMoniker": "HVAC\\HVACSystem.cs",
+              "ToolTip": "C:\\Users\\Micas\\OneDrive\\Documents\\Git\\3371\\HVAC\\HVAC\\HVACSystem.cs [Design]",
+              "RelativeToolTip": "HVAC\\HVACSystem.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T16:59:01.595Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
